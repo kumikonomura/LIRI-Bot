@@ -23,10 +23,10 @@ if (name === 'movieThis') {
 // spotify npm
 let Spotify = require('node-spotify-api')
 
-// let spotify = new Spotify({
-//     id: process.env.SPOTIFY_ID,
-//     secret: process.env.SPOTIFY_SECRET
-// })
+let spotify = new Spotify({
+    id: process.env.SPOTIFY_ID,
+    secret: process.env.SPOTIFY_SECRET
+})
 
 let spotifyThisSong = _ => {
 spotify
