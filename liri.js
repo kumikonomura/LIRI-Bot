@@ -41,7 +41,7 @@ if (name === 'movieThis') {
 
 // Spotify Function
 let spotifyThisSong = _ => {
-spotify.search({type: 'track', query: `${name}`})
+spotify.search({type: 'track', query: `${song}`})
     .then(r => {
         console.log(r)
     })
