@@ -1,13 +1,18 @@
 // activates .env file
 require("dotenv").config()
-
 // this allows us to use the node js module
 const fs = require('fs')
 
 const axios = require('axios')
 
 // activates keys stored in keys.js file
-let keys = require("./keys.js");
+const keys = require("./keys.js");
+
+const Spotify = require('node-spotify-api')
+let spotify = new Spotify({
+    id: process.env.SPOTIFY_ID,
+    secret: process.env.SPOTIFY_SECRET
+})
 
 let [, , name, movie] = process.argv
 console.log(name)
@@ -33,31 +38,19 @@ axios.get(`http://www.omdbapi.com/?t=${movie}&apikey=trilogy`)
 if (name === 'movieThis') {
     movieThis()
 } 
-// // spotify npm
-// let Spotify = require('node-spotify-api')
 
-// let spotify = new Spotify({
-//     id: process.env.SPOTIFY_ID,
-//     secret: process.env.SPOTIFY_SECRET
-// })
+// Spotify Function
+let spotifyThisSong = _ => {
+spotify.search({type: 'track', query: `${name}`})
+    .then(r => {
+        console.log(r)
+    })
+    .catch(e => console.log(e))
+}
 
-// let spotifyThisSong = _ => {
-// spotify
-//     .search({type: 'track', query: 'All the Small Things'})
-//     .then(function(response){
-//         console.log(response)
-//     })
-//     .catch(function(err){
-//         console.log(err)
-//     })
-// }
-
-// Show following info about song in terminal
-    // Artist
-    // Song Name
-    // Preview Link of song from Spotify
-    // Album that song is from
-
+if (name === 'spotifyThisSong') {
+    spotifyThisSong()
+} 
 
 
 
