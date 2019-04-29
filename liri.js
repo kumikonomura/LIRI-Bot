@@ -44,7 +44,17 @@ if (action === 'movieThis') {
 let spotifyThisSong = _ => {
     spotify.search({type: 'track', query: `${title}`, limit: 1})
         .then(r => {
-            console.log(r.tracks.items[0].type)
+            // console.log(r.tracks.items[0].type)
+            // console.log(r.tracks.items[0].artists[0].name)
+            // console.log(r.tracks.items[0].name)
+            // console.log(r.tracks.items[0].external_urls.spotify)
+            // console.log(r.tracks.items[0].album.name)
+            console.log(`
+            Artist: ${r.tracks.items[0].artists[0].name}
+            Song: ${r.tracks.items[0].name}
+            Preview Link: ${r.tracks.items[0].external_urls.spotify}
+            Album: ${r.tracks.items[0].album.name}
+            `)
         })
         .catch(e => console.log(e))
 }
