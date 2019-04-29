@@ -38,7 +38,7 @@ let movieThis = _ => {
 
 if (action === 'movieThis') {
     movieThis()
-} 
+}
 
 // Spotify Function
 let spotifyThisSong = _ => {
@@ -61,16 +61,20 @@ let spotifyThisSong = _ => {
 
 if (action === 'spotifyThisSong') {
     spotifyThisSong()
-} 
+}
 
 // // Band is Town Function
-// let concertThis = _ => {
-//     axios.get(`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`)
-//     .then(d => {
-//         console.log(d)
-//     })
-//     .catch(e => console.log(e))
-// }
+let concertThis = _ => {
+    axios.get(`https://rest.bandsintown.com/artists/${title}/events?app_id=codingbootcamp`)
+    .then(r => {
+        console.log(r)
+    })
+    .catch(e => console.log(e))
+}
+
+if (action === 'concertThis') {
+    concertThis()
+}
 
 
 
