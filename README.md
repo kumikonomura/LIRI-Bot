@@ -16,4 +16,4 @@ Furthermore, you will these following api keys:
 ### movieThis
 The movieThis command will run the movieThis function and return information about a specific movie. The user enters the command as follows:
 node 'name of file' movieThis "title of movie"
-https://github.com/kumikonomura/LIRI-Bot/images/snip_1.png
+https://github.com/kumikonomura/LIRI-Bot/blob/master/images/snip_1.PNG
