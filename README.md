@@ -8,6 +8,7 @@ You will need the following node packages installed:
 * node-spotify-api
 * dotenv
 * moment
+#
 Furthermore, you will these following api keys:
 * spotify (ID and SECRET)
 * omdb
@@ -21,3 +22,5 @@ https://github.com/kumikonomura/LIRI-Bot/blob/master/images/snip_1.PNG
 The spotifyThisSong command will run the spotifyThisSong function and return
 information regarding a specific song. The user enters the command as follows: node 'name of file' spotifyThisSong "name of song"
 https://github.com/kumikonomura/LIRI-Bot/blob/master/images/snip_2.PNG
+### concertThis
+The concertThis command will run the concertThis function and return
