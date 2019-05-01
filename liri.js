@@ -15,6 +15,8 @@ let spotify = new Spotify({
     secret: process.env.SPOTIFY_SECRET
 })
 
+const moment = require('moment')
+
 let [, , action, title] = process.argv
 console.log(action)
 
@@ -67,10 +69,17 @@ if (action === 'spotifyThisSong') {
 let concertThis = _ => {
     axios.get(`https://rest.bandsintown.com/artists/${title}/events?app_id=codingbootcamp`)
     .then(r => {
-        console.log(r)
+        // console.log(r.data[0].venue.name)
+        // console.log(r.data[0].venue.city, r.data[0].venue.country)
+        // console.log(r.data[0].datetime)
+        console.log(`
+        Venue: ${r.data[0].venue.name}
+        Location: ${r.data[0].venue.city, r.data[0].venue.country}
+        Event Date: ${moment(`${r.data[0].datetime}`).format('MMMM DD, YYYY')}
+        `)
     })
     .catch(e => console.log(e))
-}
+} 
 
 if (action === 'concertThis') {
     concertThis()
