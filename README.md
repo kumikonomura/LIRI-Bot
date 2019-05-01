@@ -17,3 +17,7 @@ Furthermore, you will these following api keys:
 The movieThis command will run the movieThis function and return information about a specific movie. The user enters the command as follows:
 node 'name of file' movieThis "title of movie"
 https://github.com/kumikonomura/LIRI-Bot/blob/master/images/snip_1.PNG
+### spotifyThisSong
+The spotifyThisSong command will run the spotifyThisSong function and return
+information regarding a specific song. The user enters the command as follows: node 'name of file' spotifyThisSong "name of song"
+https://github.com/kumikonomura/LIRI-Bot/blob/master/images/snip_2.PNG
