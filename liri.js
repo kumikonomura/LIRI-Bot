@@ -22,6 +22,9 @@ console.log(action)
 
 // OMDB Function
 let movieThis = _ => {
+    if (title === undefined) {
+        title = "Mr. Nobody"
+    }
     axios.get(`http://www.omdbapi.com/?t=${title}&apikey=trilogy`)
         .then(d => {
             // console.log(d)
@@ -44,6 +47,11 @@ if (action === 'movieThis') {
 
 // Spotify Function
 let spotifyThisSong = _ => {
+    if (title === undefined) {
+        title = "The Sign Ace of Base"
+        // return "The Sign by Ace of base"
+    }
+    console.log(title)
     spotify.search({type: 'track', query: `${title}`, limit: 1})
         .then(r => {
             // console.log(r.tracks.items[0].type)
