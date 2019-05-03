@@ -73,7 +73,7 @@ if (action === 'spotifyThisSong') {
     spotifyThisSong()
 }
 
-// // Band is Town Function
+// Band is Town Function
 let concertThis = _ => {
     axios.get(`https://rest.bandsintown.com/artists/${title}/events?app_id=codingbootcamp`)
     .then(r => {
@@ -92,7 +92,16 @@ let concertThis = _ => {
 if (action === 'concertThis') {
     concertThis()
 }
-
+// Do What It Says Function
+let doWhatItSays = _ => {
+    fs.readFile('./random.txt', 'utf8', (e, data) => {
+        if(e) throw e
+        console.log(data.toString())
+    if(action === 'spotifyThisSong') {
+        spotifyThisSong()
+    }
+    })
+}
 
 
 
